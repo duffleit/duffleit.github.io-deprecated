@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  {% include head.html %}
+
+  <body>
+    <div id="st-container" class="st-container">
+      <div class="st-pusher">
+        <nav class="st-menu st-effect-3" id="menu-3">
+          <div class="portrait">
+              <img alt="me" src="{{ site.baseurl }}public/images/portrait.jpg"/>
+          </div>
+          <div class="iconmenu">
+            <a href="http://twitter.com/duffleit" target="_blank" class="fa fa-twitter"></a>
+            <a href="http://github.com/duffleit" target="_blank" class="fa fa-github"></a>
+            <a href="atom.xml" target="_blank" class="fa fa-rss-square"></a>
+          </div>
+          <ul class="posts">  
+            {% for post in site.posts limit:8 %}  
+               <li>  
+                 <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>  
+               </li>  
+            {% endfor %}  
+              <li style="text-align: center">&nbsp;<a class="btn" href="{{ site.baseurl }}list"><i class="fa fa-bars"></i> Show all posts</a></li>
+          </ul>
+        </nav>
+        <div class="st-content"><!-- this is the wrapper for the content -->
+          <a id="top"></a>
+          <div class="st-content-inner"><!-- extra div for emulating position:fixed of the menu -->
+            <div class="container">
+              <header class="masthead">
+                <h3 class="masthead-title">
+                  <i class="fa fa-bars showsidebarBtn" id="menu" data-effect="st-effect-3"></i>&nbsp;
+                </h3>
+              </header>
+              <main>
+                {{ content }}
+              </main>
+            </div>
+          </div><!-- /st-content-inner -->
+        </div><!-- /st-content -->
+      </div><!-- /st-pusher -->
+    </div><!-- /st-container -->
+    <script src="{{ site.baseurl }}public/js/modernizr.custom.js"></script>
+    <script src="{{ site.baseurl }}public/js/classie.js"></script>
+    <script src="{{ site.baseurl }}public/js/sidebarEffects.js"></script>
+  </body>
+</html>

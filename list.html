@@ -1,0 +1,17 @@
+---
+layout: default
+title: Home
+---
+
+<h1>Posts</h1>
+<div>View all posts on <a href="{{ site.github_pages_url }}/_posts">github</a></div>
+<div>&nbsp;</div>
+<ul class="posts">  
+  {% for post in site.posts limit:20 %}  
+     <li>  
+       <span>{{ post.date | date_to_string }}</span> &raquo;  
+       <a href="{{ BASE_PATH }}{{ post.url }}">  
+       {{ post.title }}</a>  
+     </li>  
+  {% endfor %}  
+</ul>

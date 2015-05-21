@@ -1,0 +1,35 @@
+# Permalinks
+permalink:        pretty
+relative_permalinks: true
+
+# Syntax
+highlighter: 		pygments
+
+
+# Setup
+title:            duffleit.github.io
+tagline:          
+url:              http://duffleit.github.io
+paginate:         1
+baseurl:          /
+author:
+  name:           David Leitner
+  url:            https://twitter.com/duffleit
+
+# Custom vars
+version:          1.0.0
+github_pages_url: https://github.com/duffleit/duffleit.github.io/tree/master/
+
+username: duffleit
+repo: duffleit.github.io
+
+
+exclude:
+  - README.md
+  - Rakefile
+  - Gemfile
+  - Gemfile.lock
+  - changelog.md
+  - "*.Rmd"
+  - vendor
+  - .travis.yml
