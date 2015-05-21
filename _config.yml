@@ -18,14 +18,14 @@ author:
 
 # Custom vars
 version:          1.0.0
-github_pages_url: https://github.com/duffleit/duffleit.github.io/tree/master/
+github_pages_url: https://github.com/duffleit/duffleit.github.io/tree/blogdata/
 
 username: duffleit
 repo: duffleit.github.io
 
 
 exclude:
-  - README.md
+  - readme.md
   - Rakefile
   - Gemfile
   - Gemfile.lock
