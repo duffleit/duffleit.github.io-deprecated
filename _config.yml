@@ -23,6 +23,8 @@ github_pages_url: https://github.com/duffleit/duffleit.github.io/tree/blogdata/
 username: duffleit
 repo: duffleit.github.io
 
+include: 
+  - atom.xml
 
 exclude:
   - readme.md
