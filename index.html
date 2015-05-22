@@ -13,6 +13,7 @@ title: Home
     {{ post.content }}
     </div>
     <script>
+    var disqus_identifier = '{{ post.url }}';
     window.onload = function(){
       var anchors = document.getElementById('articleContent').getElementsByTagName('a');
       for (var i=0; i<anchors.length; i++){
@@ -46,7 +47,6 @@ title: Home
 
 <script type="text/javascript">
     var disqus_shortname = 'duffleit';
-    var disqus_identifier = '{{ page.link }}';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
