@@ -7,7 +7,7 @@ title: Home
   {% for post in paginator.posts %}
   <article class="post">
     <div class="post-date"><i class="fa fa-calendar-o"></i> {{ post.date | date_to_string }}</div>
-    <h1 class="post-title"><a href="{{ site.baseurl }}{{ page.path }}">{{ post.title }}<a></h1>
+    <h1 class="post-title"><a href="{{ post.url }}">{{ post.title }}<a></h1>
     <a class="btn" href="{{ site.github_pages_url }}{{ post.path }}"><i class="fa fa-github"></i> edit this post on github</a>
     <div id="articleContent">
     {{ post.content }}
@@ -41,5 +41,18 @@ title: Home
   {% endif %}
 </div>
 
-<a href="#top" id="backtotop"><i class="fa fa-arrow-up"></i> back to top</a>
+<div>
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+    var disqus_shortname = 'duffleit';
+    var disqus_identifier = '{{ page.link }}';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+</div>
 
