@@ -10,5 +10,3 @@ In Addition the [Jekyll Buttler](http://getpoole.com/) provides a solid base to 
 
 I will start to collect my thoughts on different topics related to software development here. 
 Bye for now, but hopefully, see you soon!
-
-test
