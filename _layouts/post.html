@@ -4,7 +4,7 @@ layout: default
 
 <article class="post">
     <div class="post-date"><i class="fa fa-calendar-o"></i> {{ page.date | date_to_string }}</div>
-	<h1 class="post-title"><a href="{{ page.link }}">{{ page.title }}</a></h1>
+	<h1 class="post-title"><a href="{{ page.url }}">{{ page.title }}</a></h1>
 	<a class="btn" href="{{ site.github_pages_url }}{{ page.path }}"><i class="fa fa-github"></i> edit this post on github</a>
 	<div id="articleContent">
 	{{ content }}
@@ -39,7 +39,7 @@ layout: default
 
 <script type="text/javascript">
     var disqus_shortname = 'duffleit';
-    var disqus_identifier = '{{ page.link }}';
+    var disqus_identifier = 'http://duffleit.github.io{{ page.url }}';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
