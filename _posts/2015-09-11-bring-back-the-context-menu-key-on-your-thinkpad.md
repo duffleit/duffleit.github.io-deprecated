@@ -4,6 +4,7 @@ title: bring back the context menu key on your thinkpad
 ---
 
 Today at work, I received my new Lenovo Thinkpad T450s. I really love it, but then the absolute shock: There is no **right click** (aka **context menu**) key. Since I use this key very common, I needed a solution, aaand I found a really simple one:
+
 -	Just download a nice small software called **[SharpKeys](http://www.randyrants.com/category/sharpkeys/)**. 
 -	Start the program and click the **Add** Button. 
 -	You can now map the key `Special: PrtSc (E0_37)` on the left side to the key `Special: Application (E0_5D)` *(this is the context menu key action)* on the right side. 
