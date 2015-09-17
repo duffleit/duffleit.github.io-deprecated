@@ -12,4 +12,4 @@ Today I received my new Lenovo Thinkpad T450s. I really like it <i class="fa fa-
 -	**Reboot**, et voilà, your context menu button is back. 
 
 -----------
-And for those of you **who can't follow my textual instruction**, of course some guy already made a **youtube video** about [how to work with SharpKeys](https://www.youtube.com/watch?v=X3F_tNyGwfw).
+**But how to take a screenshot, without the Print-Key?**. Well, [here](https://getsharex.com/) is the answer. **[ShareX](https://getsharex.com/)** is my favorite tool for windows to take screenshots. It's source is available on [Github](https://github.com/ShareX/ShareX) and allows you to choose any key combination to take screenshots. 
