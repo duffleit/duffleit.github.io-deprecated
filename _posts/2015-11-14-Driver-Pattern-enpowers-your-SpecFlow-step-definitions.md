@@ -22,7 +22,7 @@ Basically, context Injection was designed to share data between step definitions
 ### Too theoretical? Here is an example:
 *Story behind the example: Let’s say I’m some kind of forgetful guy and always forget to water my flowers. That’s why I bought a small sprinkler system, which luckily offers a .Net Sdk. (Sad to say that only the first sentence is correct.) I have implemented an application which allows me to start watering my flowers. I've generated some gherkin steps with following step definitions:*
 
-```
+{% highlight C# %}
 [Binding]
 public sealed class WaterFlowerSteps
 {
@@ -65,7 +65,7 @@ public class FlowerContext
 {
     public string CurrentlySelectedFlower { get; set; }
 }
-```
+{% endhighlight %}
 
 
 In the above example, we have two different classes with one step definition in each. These two step definitions need to share some data. That’s why the `FlowerContext` is injected twice during the execution of one scenario:
@@ -80,7 +80,7 @@ Basically, a driver acts like a Data Context. The main difference between the dr
 
 Many step definitions I’ve seen look something like this:
 
-```
+{% highlight C# %}
 [Binding]
 public sealed class WaterFlowerSteps
 {
@@ -117,14 +117,14 @@ public sealed class WaterFlowerSteps
         Assert.AreEqual(expectedFlowerName, actualFlowerName);
     }
 }
-```
+{% endhighlight %}
 
 I guess you see the problem with this kind of test code. It’s **hard to read, understand and also to maintain.** 
 The interesting thing, however, is that most of the developers I know would never write a production code like this. But if we talk about test code: “Yolo man, it’s green”. For an unknown reason, I still have the feeling that test code is too often seen as a kind of unloved duty by many developers. But hey, here is a little secret: If you do it right, writing **test code** can be quite cool. That’s why it **deserves your love**, too.
 
 For this reason I created a `FlowerSprinkerDriver`, which holds all the **knowledge** about **how to perform** the **automation logic**:
 
-```
+{% highlight C# %}
 public class FlowerSprinkerDriver
 {
     private FlowerSprinkerMock _flowerSprinkerMock;
@@ -160,11 +160,11 @@ public class FlowerSprinkerDriver
         return GetCurrentLogData().LastFlowers.LastOrDefault();
     }
 }
-```
+{% endhighlight %}
 
 This causes, that the **step definition only delegates** to the **correct driver functions** and has some assertions:
 
-```csharp
+{% highlight C# %}
 [Binding]
 public sealed class WaterFlowerSteps
 {
@@ -184,7 +184,7 @@ public sealed class WaterFlowerSteps
         Assert.AreEqual(expectedFlowerName, lastWateredFlower);
     }
 }
-```
+{% endhighlight %}
 
 **Beside the logic** of how something is done, like in the `GetLastWateredFlower()` function, the **driver** also provides some state information in the `TodaysWateredFlowers` property. This results, that the state can be safely used in different step definitions during one scenario execution. 
 
