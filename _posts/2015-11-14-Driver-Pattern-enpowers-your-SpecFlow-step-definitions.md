@@ -3,7 +3,7 @@ layout: post
 title: Driver Pattern enpowers your SpecFlow step definitions
 ---
 
-*SpecFlow* | *Driver Pattern* | *Context Injection* |  *Page Object Pattern*
+**tags:** SpecFlow;  Driver Pattern; Context Injection; Page Object Pattern
 
 Up to now I've seen quite a few projects using [SpecFlow](http://www.specflow.org) for conducting automated regression tests. Even if all these projects are located in different domains and are implemented with different technologies such as Asp.net, WPF or WCF, they still have one problem in common: **the step definitions are messy and hard to maintain. **
 
@@ -22,7 +22,7 @@ Basically, context Injection was designed to share data between step definitions
 ### Too theoretical? Here is an example:
 *Story behind the example: Let’s say I’m some kind of forgetful guy and always forget to water my flowers. That’s why I bought a small sprinkler system, which luckily offers a .Net Sdk. (Sad to say that only the first sentence is correct.) I have implemented an application which allows me to start watering my flowers. I've generated some gherkin steps with following step definitions:*
 
-```csharp
+```
 [Binding]
 public sealed class WaterFlowerSteps
 {
@@ -80,7 +80,7 @@ Basically, a driver acts like a Data Context. The main difference between the dr
 
 Many step definitions I’ve seen look something like this:
 
-```csharp
+```
 [Binding]
 public sealed class WaterFlowerSteps
 {
@@ -124,7 +124,7 @@ The interesting thing, however, is that most of the developers I know would neve
 
 For this reason I created a `FlowerSprinkerDriver`, which holds all the **knowledge** about **how to perform** the **automation logic**:
 
-```csharp
+```
 public class FlowerSprinkerDriver
 {
     private FlowerSprinkerMock _flowerSprinkerMock;
