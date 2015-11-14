@@ -212,5 +212,5 @@ Since this *[bullshitbingo](https://en.wikipedia.org/wiki/Buzzword_bingo)* can b
 	- [https://code.google.com/p/selenium/wiki/PageFactory](https://code.google.com/p/selenium/wiki/PageFactory)
 
 
-##*You want more?*
-If you want to deepen your knowledge about **BDD/ATDD** and **Specflow**, I recommend the [SpecFlow Course held by Gaspar Nagy](http://gasparnagy.com/trainings/specflow/). In this training concepts such as **Design Pattern** or **Page Object Pattern** are explained in detail.
+##*Deepen your knowledge*
+If you want to deepen your knowledge about **BDD/ATDD** and **Specflow**, I recommend the [SpecFlow Course held by Gaspar Nagy](http://gasparnagy.com/trainings/specflow/), who is the creator and main contributor of SpecFlow). In this training concepts such as **Design Pattern** or **Page Object Pattern** are explained in detail.
