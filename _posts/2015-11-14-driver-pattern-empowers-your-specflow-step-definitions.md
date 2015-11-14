@@ -213,4 +213,4 @@ Since this *[bullshitbingo](https://en.wikipedia.org/wiki/Buzzword_bingo)* can b
 
 
 ##*Deepen your knowledge*
-If you want to deepen your knowledge about **BDD/ATDD** and **Specflow**, I recommend the [SpecFlow Course held by Gaspar Nagy](http://gasparnagy.com/trainings/specflow/), who is the creator and main contributor of SpecFlow). In this training concepts such as **Design Pattern** or **Page Object Pattern** are explained in detail.
+If you want to deepen your knowledge about **BDD/ATDD** and **Specflow**, I recommend the [SpecFlow Course held by Gaspar Nagy](http://gasparnagy.com/trainings/specflow/), who is the creator and main contributor of SpecFlow. In this training concepts such as **Design Pattern** or **Page Object Pattern** are explained in detail.
