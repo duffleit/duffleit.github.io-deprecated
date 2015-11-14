@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Driver Pattern enpowers your SpecFlow step definitions
+title: Driver Pattern empowers your SpecFlow step definitions
 ---
 
 **tags:** SpecFlow;  Driver Pattern; Context Injection; Page Object Pattern
