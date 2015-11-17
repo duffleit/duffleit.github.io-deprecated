@@ -402,6 +402,7 @@ a.pagination-item:hover {
   color: white;
   font-size: 1.6rem;
   margin-right: 0.5rem;
+  cursor: pointer;
 }
 
 #scrollUp {
