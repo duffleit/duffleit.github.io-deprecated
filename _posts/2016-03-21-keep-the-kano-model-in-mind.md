@@ -12,8 +12,6 @@ This attitude changed some weeks ago during a __meeting with a customer__. The t
 
 ## The Kano model
 
-{% include image.html url="/images/kano-model.jpg" description="the kano model classifies customer preferences into three main categories." %}
-
 The [Kano model]("https://en.wikipedia.org/wiki/Kano_model") is a theory developed in the 1980s by [Noriaki Kano]("https://en.wikipedia.org/wiki/Noriaki_Kano"). It’s visualized as a simple two-axis grid, measuring investment against customer satisfaction. Basically, it describes three distinct categories. As we are software developers, let’s call them features: 
 
 - ### Performance features
@@ -24,7 +22,9 @@ Basic features or __must-haves__, or as I like to call them, the _I-thought-that
 
 - ### Excitement features  
 These features are also called game changers, or as I like to call them, _the-OMG-that’s-great-features_. They __delight customers in an unexpected way__, but would have zero negative impact if they were absent. These are often details that __make a product unique among its competitors__, and they contribute 100% to positive customer satisfaction. Remember smartphones before multitouch? Laptops before solid state drives? The sad thing about these features is that after some time, they will turn into performance or even basic features and customers will expect them. This is the way the world is going.
- 
+
+{% include image.html url="/images/kano-model.jpg" description="the kano model classifies customer preferences into three main categories." %}
+
 ## The salient point
 
 As you are familiar with these three categories, you may be asking yourself, ‘Nice, but where’s the excitement feature in this post?’ Well, the __real essence__ of the Kano model is that __customers will usually tell you about only the performance features__. Sound familiar? Well, I don’t have the statistics, but I would bet 80% of customer requirements consist of performance features. That’s why the __supreme challange is to figure out those basic and excitement features__ that customers want, because these features can make the difference between good software and the Windows metro calculator. 
