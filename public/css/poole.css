@@ -485,10 +485,10 @@ a.btn{
 
 
 @media (min-width: 1090px) {
-  .st-menu{
+  .st-menu::after{
     visibility: visible;
   }
-  .st-pusher{
+  .st-pusher::after{
     left: 300px;
   }
   .container{
