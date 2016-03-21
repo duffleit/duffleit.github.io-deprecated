@@ -18,6 +18,10 @@
   <meta name="description" content="{{ page.description}}" />
   {% endif %}
   
+  {% if page.keywords %}
+  <meta name="keywords" content="{{ page.keywords}}" />
+  {% endif %}
+  
   <!-- CSS -->
   <link rel="stylesheet" href="{{ site.baseurl }}public/css/poole.css">
   <link rel="stylesheet" href="{{ site.baseurl }}public/css/syntax.css">
