@@ -2,10 +2,8 @@
 layout: post
 title: Driver Pattern empowers your SpecFlow step definitions
 description: The Driver Pattern is a powerful tool to prevent messy and hard to maintain step defintions. Every developer who works with ATDD/BDD should have this pattern in his toolbelt.
+keywords: SpecFlow,Driver Pattern,Context Injection,Page Object Pattern,BDD,ATDD,Step defintions
 ---
-
-**tags:** SpecFlow;  Driver Pattern; Context Injection; Page Object Pattern
-
 Up to now I've seen quite a few projects using [SpecFlow](http://www.specflow.org) for conducting automated regression tests. Even if all these projects are located in different domains and are implemented with different technologies such as Asp.net, WPF or WCF, they still have one problem in common: **the step definitions are messy and hard to maintain**
 
 Driver Pattern is a powerful tool to prevent this problem. It becomes even more efficient due to its combination with [SpecFlow’s Context Injection](https://github.com/techtalk/SpecFlow/wiki/Context-Injection). Therefore, it is first important to understand how context injection works. 
