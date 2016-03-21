@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Driver Pattern empowers your SpecFlow step definitions
+description: The Driver Pattern is a powerful tool to prevent messy and hard to maintain step defintions. Every developer who works with ATDD/BDD should have this pattern in his toolbelt.
 ---
 
 **tags:** SpecFlow;  Driver Pattern; Context Injection; Page Object Pattern
