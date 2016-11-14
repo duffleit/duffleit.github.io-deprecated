@@ -1,10 +1,5 @@
 # Permalinks
 permalink:        pretty
-relative_permalinks: true
-
-# Syntax
-highlighter: 		pygments
-
 
 # Setup
 title:            duffleit.github.io
@@ -35,3 +30,5 @@ exclude:
   - "*.Rmd"
   - vendor
   - .travis.yml
+
+gems: [jekyll-paginate]
