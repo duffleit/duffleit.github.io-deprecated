@@ -1,19 +1,19 @@
 ---
 layout: post
 title: Missing Optionals in .Net  
-description: Optionals are a great concept, known primary from functional languages like F# - is there a need to use them in OOP languages like C#?
+description: Optionals are a great concept, known primary from functional languages like F# - is there a need to use them in object-oriented languages like C#?
 keywords: Optionals, Mabye, Option, donNet, F#, C#, OOP, Exceptions
 ---
 
-Let's start with something like: 
+This post is about my desire for F#-optionals in C#, and the reason why you should use them wisely in object-oriented languages. Let's start with something simple like this: 
 
 ```csharp
 Image LoadImage(Url imageUrl)
 ```
 
-This is a simple LoadImage-method, which takes an Url and returns an Image - quite __readable and easy to understand__. We don’t need any implementation or documentation to understand what this method does. Isn’t that what we expect from __clean code__?
+This is a basic LoadImage-method, which takes an Url and returns an Image - quite __readable and easy to understand__. We don’t need any implementation or documentation to understand what this method does. Isn’t that what we expect from __clean code__?
 
-One reason for the superior readability is that method signatures define obvious what they expect and what they return. We can think of this like a __promise__: “If you pass some specified values to me, I will return some defined type to you.” We can trust in these promises - or perhaps not?  
+One reason for the superior readability is that method signatures define obvious what they expect and what they return. We can think of this like a __promise__: "If you pass some specified values to me, I will return some defined type to you." We can trust in these promises - or perhaps not?  
 
 ```csharp
 Image LoadImage(Url imageUrl){ 
@@ -28,9 +28,9 @@ Unbelievable, the method signature is a liar - it does not only return an Image 
 
 # Why I don’t like exceptions
 
-There are some reasons I use exceptions very sparingly. The first one can be described by a look at the purpose of exceptions. They can scream “Help me!” (aka throw), and your program will jump to someone else who says “I’m the Saviour” (aka catch). The problem I have with this behavior is that the catch functionality can be completely elsewhere in code then the throw capability. This circumstance makes your code __hard to read, follow and understand__. If you think about this in detail, it even smells a little after the greatly feared GOTO. 
+There are some reasons I use exceptions very sparingly. The first one can be described by a look at the purpose of exceptions. They can scream "Help me!" (aka `throw`), and your program will jump to someone else who says "I’m the Saviour" (aka `catch`). The problem I have with this behavior is that the catch functionality can be completely elsewhere in code then the throw capability. This circumstance makes your code __hard to read, follow and understand__. If you think about this in detail, it even smells a little after the greatly feared `GOTO`. 
 
-The second reason is that they are __simple to overlook__. As mentioned above, the method __signature won’t tell__ you about the exception, and there is no way to declare this behavior (besides comments of course). There are mechanisms for more explicit declarations in other languages, like checked-exceptions in Java. Even if they aren’t that popular at all, they provide a possibility to tell the caller of a method, that this method has some edge cases which won’t return an image. In .Net there is no language-level support for a similar concept.
+The second reason is that they are __simple to overlook__. As mentioned above, the method __signature won’t tell__ you about the exception, and there is no way to declare this behavior (besides comments of course). There are mechanisms for more explicit declarations in other languages, like [checked-exceptions](https://stackoverflow.com/questions/613954/the-case-against-checked-exceptions) in Java  . Even if they aren’t that popular at all, they provide a possibility to tell the caller of a method, that this method has some edge cases which won’t return an image. In .Net there is no language-level support for a similar concept.
 
 Another reason is their very __cumbersome syntax__. Your catch-blocks should be as small as possible, but this leads to the noise of declaring all your variables outside the catch scope.  Besides this, the additional scope makes reading your code difficult.
 
@@ -38,7 +38,7 @@ And finally, I need to highlight that this LoadImage-method is a perfect example
 * The first one: There should always be an image, and if there is no image something went definitively wrong - you can stay with an exception. 
 * The second one and in my experience the more frequent one: It’s happening quite rarely that an image is not available, but it can be missing and this is known – you should not go with exceptions here – because you already know at development time, that there’s maybe no image. Some people also call this defensive programming.  
 
-Surprise, there is even a third scenario. __A mix of the above ones, where it gets tricky:__ Think of the LoadImage-method as a functionality that is __used by different parts__ within your application. Maybe some of them asking for URLS, which will always have to provide an image - but on the other hand, some parts are asking for URLs that won’t point to a image in some individual cases. 
+Surprise, there is even a third scenario. __A mix of the above ones, where it gets tricky:__ Think of the LoadImage-method as a functionality that is __used by different parts__ within your application. Maybe some of them are asking for URLS, which will always have to provide an image - but on the other hand, some parts are asking for URLs that won’t point to a image in some individual cases. 
 
 __Throwing an exception__ and handling this exception in the different application parts seems to be a legit solution? But what if those parts of our application, who can’t always expect an image, would instead always work with a Placeholder image? Wouldn’t it be nice to __return a Placeholder__ image from the LoadImage-method if no image was found?
 
@@ -54,15 +54,15 @@ If your using __value types__, .Net provided an excellent alternative, by the in
 Image? LoadImage(Url imageUrl) 
 ```
 
-This tells the method-caller explicit that null can be returned, and we can implicit infer, that some cases don't return a image. I think that’s nice!  
-But be careful if you are looking for a solution that fits __reference types__. You will find some advice, to not be that meticulous and just return a null for reference types too. 
+This tells the method-caller explicit that `null` can be returned, and we can implicit infer, that some cases don't return a image. I think that’s nice!  
+But be careful if you are looking for a solution that fits __reference types__: You will find some advice, to not be that meticulous and just return `null` for reference types too. 
  
 > In C# you can just return `null`   
 > __StackOverflow at its best.__
 
-__No one will ever check your LoadImage-Method for returning null.__ (Yes, I think that’s even less likely, then checking for an exception.) And that’s probably the reason why the whole thing you are working on, will crash one day. And you don’t want to be the one who is responsible for a crashing software. 
+__No one will ever check your LoadImage-Method for returning `null`.__ (Yes, I think that’s even less likely, then checking for an exception.) And that’s probably the reason why the whole thing you are working on, will crash one day. And you don’t want to be the one who is responsible for a crashing software. 
 
-Except in the case of Nullables as mentioned above, I don’t know any good reason to explicit return null anywhere, and I think I’m in good company. It even gets worse If you stay with this pattern in other languages. In this case, I promise, you’ll someday wake up with something like this: 
+Except in the case of Nullables as mentioned above, I don’t know any good reason to explicit return `null` anywhere, and I think I’m in good company. It even gets worse If you stay with this pattern in other languages. In this case, I promise, you’ll someday wake up with something like this: 
 
 > Cannot read property `'undefined'` of undefined   
 > __JavaScript at its best.__
@@ -81,15 +81,15 @@ Public class ImageResult{
 }
 ```
 
-I think this is a good way to express that it is the task of the LoadImage-method-user to decide what to do if no image exists. Of course, the Image property of ImageResult can still be called without checking the HasIamge Boolean, but that’s the caller's fault. 
+I think this is a good way to express, that it is the task of the LoadImage-method-user to decide what to do if no image exists. Of course, the Image property of ImageResult can still be called without checking the HasIamge Boolean, but that’s the caller's fault. 
 
-So, my advice is to wrap all your return objects into some wrapper objects? Yes, __if there is only the minimal chance that something can happen, and you know about this possibility – you should think of using this instead of exceptions__. If you start looking for a generic way to this now, you should try out Optionals.
+So, my advice is to wrap all your return objects into some wrapper objects? Yes, __if there is only the minimal chance that something can go wrong, and you know about it – you should think of using this instead of exceptions__. If you start looking for a generic way to this now, you should try out Optionals.
 
 # Optionals
 
-The concept of Optionals, options, maybes or however you call them, provide a great solution for our problem. As they are excelt in pointing out that __you supply something- but maybe that won’t even exist__. 
+The concept of Optionals, options, maybes or however you call them, provides a great solution for our problem. As they are excellent in pointing out that __you supply something- but maybe that won’t even exist__. 
 
-If change the LoadImage-method to use [FluentOptionals](https://github.com/duffleit/fluentOptionals) (a lightweight Optionals-implementation for .Net, if written) it looks like this: 
+If you change the LoadImage-method to use [FluentOptionals](https://github.com/duffleit/fluentOptionals) (a lightweight Optionals-implementation for .Net, i've written) it looks like this: 
 
 ```csharp
 Optional<Image> LoadImage(Url imageUrl) 
@@ -102,9 +102,9 @@ Image LoadImage(Url imageUrl){
 }
 ```
 
-The __method signature now tells explicitly that we optionally return an image__. It’s the caller’s decision how to react if the image doesn't. Maybe the decision will be delegated the call stack downwards again, but that’s not the point. __The improvement is that our LoadImage-method doesn’t have to decide about something, that should be decided by someone else.__
+The __method signature now tells explicitly that we optionally return an image__. It’s the caller’s decision how to react if the image doesn't exist. Maybe the decision will be delegated the call stack downwards again, but that’s not the point. __The improvement is that our LoadImage-method doesn’t have to decide about something, that should be decided by someone else.__
 
-At the point of the application, where the knowledge about this decision exists, we must decide how to handle none-existing optional (we call it a None). If you want to get the value of an Optional, it always forces you to provide a way, how to handle Nones. (at least my [FluentOptionals](https://github.com/duffleit/fluentOptionals) implementation does this consequently.)
+At the point of the application, where the knowledge about this decision exists, we must decide how to handle none-existing optionals (we call it a None). If you want to get the value of an Optional, it always forces you to provide a way, to handle Nones. (at least the [FluentOptionals](https://github.com/duffleit/fluentOptionals) implementation does this consequently.)
 
 ```csharp
 // get value of optional or if none return a DefaultImage 
@@ -117,13 +117,13 @@ _imageProvider.GetPlaceHolderImage());
 // a functional flavored matching way to do it
 var resizedImage = optionalImage.Match(
     some: i => i.ResiveToProfileImage(), 
-    none () => Image.FromText(“profileImageNotFound”).ResizeToProfileimage())    
+    none () => Image.FromText("profileImageNotFound").ResizeToProfileimage())    
 
 // a custom extension method for optional Images
 var image = optionalImage.ValueOrPlaceholder();
 
 // and you can even thow an exception if no value is available
-Var image = optionalImage.ValueOrThrow(new Exception(“the image with the url … must exist”));
+Var image = optionalImage.ValueOrThrow(new Exception("the image with the url … must exist"));
 ```
 
 There is also a way to handle scenarios, in which you don’t even need an instance of the image, you just want to do something if it exists.
@@ -134,7 +134,7 @@ opationalImage.MatchSome(i => i.UpdateTimeStamp(DateTime.Now))
 // or
 opationalImage.Match(
     some: i  => i.UpdateTimeStamp(DateTime.Now),
-    none: () => _logger.Log(“could not … “)
+    none: () => _logger.Log("could not … ")
 )
 ```
 _This is a short extract of the fluentOpations-API, the full documentation can be found on [github](https://github.com/duffleit/fluentOptionals)._
