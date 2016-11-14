@@ -497,6 +497,13 @@ a.btn{
   margin-bottom: 0.5rem
 }
 
+#articleContent{
+  font-family: 'Noto Serif', serif;
+  font-size: 19px;
+  line-height: 35px;
+  color: rgba(35,37,40,0.7);
+}
+
 @media (min-width: 1090px) {
   .st-menu{
     visibility: visible !important;
