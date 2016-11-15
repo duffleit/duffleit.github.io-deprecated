@@ -6,8 +6,9 @@ keywords: Optionals, Mabye, Option, donNet, F#, C#, OOP, Exceptions
 ---
 
 This post is about my desire for F\#-optionals in C\#, and the reason why you
-should use them wisely in object-oriented languages. Let's start with something
-simple like this:
+should use them wisely in object-oriented languages. 
+
+**Let's start** it with something simple like this:
 
 ```csharp
 Image LoadImage(Url imageUrl)
