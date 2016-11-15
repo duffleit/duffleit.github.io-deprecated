@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Missing Optionals in .Net   
+title: Missing Optionals in C#  
 description: Optionals are a marvelous concept, known primary from functional languages like F# - how about using them in object-oriented languages like C#?  
 keywords: Optionals, Mabye, Option, donNet, F#, C#, OOP, Exceptions
 ---
@@ -11,7 +11,7 @@ simple like this:
 
 ```csharp
 Image LoadImage(Url imageUrl)
-```
+``` 
 
 This is a basic LoadImage method, which takes a Url and returns an Image - quite
 **readable and easy to understand**. We don’t need any implementation or
