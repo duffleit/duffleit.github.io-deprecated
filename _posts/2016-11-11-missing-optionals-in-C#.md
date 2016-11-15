@@ -166,7 +166,7 @@ looking for a generic way to achieve this, now, you should try out Optionals.
 Optionals
 =========
 
-The concept of Optionals, options, maybes, or whatever you call them, provides a
+The concept of *optionals, options, maybes*, or whatever you call them, provides a
 great solution for our problem. They are excellent in pointing out that **you
 supply something - but maybe that won’t even exist**.
 
