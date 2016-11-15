@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Missing Optionals in .Net   
 description: Optionals are a marvelous concept, known primary from functional languages like F# - how about using them in object-oriented languages like C#?  
 keywords: Optionals, Mabye, Option, donNet, F#, C#, OOP, Exceptions
