@@ -45,7 +45,7 @@ There are some reasons why I use exceptions very sparingly. The first one can be
 described by a look at the purpose of exceptions. They can scream "Help me!"
 (aka `throw`), and your program will jump to someone else who says "I’m the
 Saviour" (aka `catch`). The problem I have with this behavior is that the catch
-functionality can be completely dissociated from in code than the throw
+functionality can be completely dissociated from in code, than the throw
 capability. This circumstance makes your code **hard to read, follow, or
 understand**. If you think about this in detail, it even smells a bit like the
 greatly feared `GOTO`.
@@ -68,6 +68,7 @@ And finally, I need to highlight that this LoadImage method is a perfect example
 for many similar use cases out there, where **exceptions are used for something
 they aren’t made for**, to my understanding. By our given example, we must
 examine two possible scenarios. 
+
 * The first one: There should always be an
 image, and if there is no image something definitely went wrong - you can stay
 with an exception. 
