@@ -179,7 +179,7 @@ Optionals implementation for .Net, which I've written), it looks like this:
 Optional<Image> LoadImage(Url imageUrl) 
 
 // implementation: 
-Image LoadImage(Url imageUrl){
+Optional<Image> LoadImage(Url imageUrl){
     return (_webLoader.IsImageAvailable(imageUrl))
         ? Optional.From(webLoader.GetImage(imageUrl))
         : Optional.None<Image>()
@@ -209,8 +209,8 @@ _imageProvider.GetPlaceHolderImage());
 
 // a functional flavored matching way to do it
 var resizedImage = optionalImage.Match(
-    some: i => i.ResiveToProfileImage(), 
-    none () => Image.FromText("profileImageNotFound").ResizeToProfileimage())    
+    some: i  => i.ResiveToProfileImage(), 
+    none: () => Image.FromText("profileImageNotFound").ResizeToProfileimage())    
 
 // a custom extension method for optional Images
 var image = optionalImage.ValueOrPlaceholder();
@@ -231,11 +231,12 @@ opationalImage.Match(
 )
 ```
 
-*This is a short extract of the fluentOptions-API; the full documentation can be
+*This is a short extract of the fluentOptionals-API; the full documentation can be
 found on* [github](https://github.com/duffleit/fluentOptionals)*.*
 
 As already mentioned, the concept of Optionals provides **two significant
 benefits**: 
+
 * **explicitly** tell the caller of a function that his request
 probably can’t be fulfilled 
 * **handle the decision**, on how to manage this
