@@ -12,14 +12,23 @@ title: Home
     <div id="articleContent">
     {{ post.content }}
     </div>
-    <script>
-    var disqus_identifier = 'http://duffleit.github.io{{ post.url }}';
-    window.onload = function(){
-      var anchors = document.getElementById('articleContent').getElementsByTagName('a');
-      for (var i=0; i<anchors.length; i++){
-        anchors[i].setAttribute('target', '_blank');
+    <script type="text/javascript">
+      window.onload = function(){
+        var anchors = document.getElementById('articleContent').getElementsByTagName('a');
+        for (var i=0; i<anchors.length; i++){
+          anchors[i].setAttribute('target', '_blank');
+        }
       }
-    }
+    
+      var disqus_shortname = 'duffleit';
+      this.page.identifier = {{ post.url }};
+
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
     </script>
     </article>
   {% endfor %}
@@ -44,16 +53,6 @@ title: Home
 
 <div>
 <div id="disqus_thread"></div>
-
-<script type="text/javascript">
-    var disqus_shortname = 'duffleit';
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
 </div>
 
 
