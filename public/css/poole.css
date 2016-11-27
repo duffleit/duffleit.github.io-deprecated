@@ -509,6 +509,8 @@ a.btn{
     visibility: visible !important;
   }
   .st-pusher{
+  	position: absolute;
+  	right: 0;
     left: 300px !important;
   }
   .container{
