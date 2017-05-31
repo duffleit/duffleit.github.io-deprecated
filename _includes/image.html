@@ -1,4 +1,11 @@
 <div class="image">
 <img src="{{ include.url }}" alt="{{ include.description }}"/>
-<caption align="bottom">{{ include.description }}</caption>
+<caption align="bottom">
+{{ include.description }}
+<small>
+{% if include.by != '' %}by <a href="{{include.by-url}}">{{include.by}}</a>{% endif %}
+{% if include.licence != '' %} via <a href="{{include.licence-url}}">{{include.licence}}</a>{% endif %}
+</small>
+<div style="clear: both"></div>
+</caption>
 </div>

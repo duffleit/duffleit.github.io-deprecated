@@ -497,6 +497,12 @@ a.btn{
   margin-bottom: 0.5rem
 }
 
+.image small {
+    font-style: normal;
+    margin: 0 0.5rem;
+    float: right;
+}
+
 #articleContent{
   font-family: 'Noto Serif', serif;
   font-size: 19px;
