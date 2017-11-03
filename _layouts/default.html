@@ -14,7 +14,7 @@
             <a href="http://twitter.com/duffleit" target="_blank" class="fa fa-twitter"></a>
             <a href="https://www.xing.com/profile/David_Leitner4" target="_blank" class="fa fa-xing"></a>
             <a href="http://github.com/duffleit" target="_blank" class="fa fa-github"></a>
-            <a href="{{ site.baseurl }}atom.xml" target="_blank" class="fa fa-rss-square"></a>
+            <a href="/atom.xml" target="_blank" class="fa fa-rss-square"></a>
           </div>
           <ul class="posts">  
             {% for post in site.posts limit:8 %}  
@@ -22,7 +22,7 @@
                  <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>  
                </li>  
             {% endfor %}  
-              <li style="text-align: center">&nbsp;<a class="btn" href="{{ site.baseurl }}list"><i class="fa fa-bars"></i> Show all posts</a></li>
+              <li style="text-align: center">&nbsp;<a class="btn" href="/list"><i class="fa fa-bars"></i> Show all posts</a></li>
           </ul>
         </nav>
         <div class="st-content"><!-- this is the wrapper for the content -->
@@ -40,8 +40,8 @@
         </div><!-- /st-content -->
       </div><!-- /st-pusher -->
     </div><!-- /st-container -->
-    <script src="{{ site.baseurl }}public/js/modernizr.custom.js"></script>
-    <script src="{{ site.baseurl }}public/js/classie.js"></script>
-    <script src="{{ site.baseurl }}public/js/sidebarEffects.js"></script>
+    <script src="/public/js/modernizr.custom.js"></script>
+    <script src="/public/js/classie.js"></script>
+    <script src="/public/js/sidebarEffects.js"></script>
   </body>
 </html>
